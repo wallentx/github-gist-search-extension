@@ -47,7 +47,7 @@ jobs:
         if: github.event_name == 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload "${{ github.event.release.tag_name }}" dist/github-gist-search-extension.zip --clobber
+        run: gh release upload "${{ github.event.release.tag_name }}" dist/github-gist-enhanced-search.zip --clobber
 
       - name: Publish to Chrome Web Store
         if: ${{ env.CWS_CLIENT_ID != '' && env.CWS_CLIENT_SECRET != '' && env.CWS_REFRESH_TOKEN != '' && env.CWS_EXTENSION_ID != '' }}
@@ -55,7 +55,7 @@ jobs:
         with:
           mode: publish
           extension_id: ${{ env.CWS_EXTENSION_ID }}
-          zip_file_path: dist/github-gist-search-extension.zip
+          zip_file_path: dist/github-gist-enhanced-search.zip
           client_id: ${{ secrets.CWS_CLIENT_ID }}
           client_secret: ${{ secrets.CWS_CLIENT_SECRET }}
           refresh_token: ${{ secrets.CWS_REFRESH_TOKEN }}
