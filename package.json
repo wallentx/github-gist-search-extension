@@ -1,0 +1,36 @@
+{
+  "name": "github-gist-search-enhancer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension that enhances gist.github.com search with a GitHub-style query builder.",
+  "scripts": {
+    "build": "node scripts/build-extension.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "check": "npm run lint && npm run format:check && npm test",
+    "package": "npm run build && node scripts/package-extension.mjs",
+    "prepare": "node .husky/install.mjs",
+    "test": "npm run build && playwright test",
+    "test:headed": "npm run build && playwright test --headed",
+    "test:ui": "npm run build && playwright test --ui",
+    "publish:webstore": "npm run package && node scripts/publish-extension.mjs"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,json,md,yml,yaml}": "prettier --write"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.1",
+    "@playwright/test": "^1.56.0",
+    "eslint": "^9.25.1",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.5.3"
+  }
+}
