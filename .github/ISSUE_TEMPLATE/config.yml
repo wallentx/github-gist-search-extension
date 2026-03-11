@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Extension Feedback / Bug Report
-    url: https://github.com/wallentx/github-gist-search-extension/issues/new/choose
+    url: https://github.com/wallentx/github-gist-enhanced-search/issues/new/choose
     about: Use the issue form to report bugs or request improvements.

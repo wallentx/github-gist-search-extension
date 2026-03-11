@@ -1,4 +1,4 @@
-# github-gist-search-extension
+# github-gist-enhanced-search
 
 Chrome extension to search your gists with a GitHub-style centered search overlay and qualifier suggestions.
 
@@ -87,7 +87,7 @@ xvfb-run -a npm test
 
 ## Release publishing
 
-The release workflow packages `dist/github-gist-search-extension.zip`, uploads it to the GitHub release, and can publish it to the Chrome Web Store with [`puzzlers-labs/chrome-webstore-publish`](https://github.com/puzzlers-labs/chrome-webstore-publish).
+The release workflow packages `dist/github-gist-enhanced-search.zip`, uploads it to the GitHub release, and can publish it to the Chrome Web Store with [`puzzlers-labs/chrome-webstore-publish`](https://github.com/puzzlers-labs/chrome-webstore-publish).
 
 Chrome Web Store publishing requires:
 

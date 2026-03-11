@@ -1,6 +1,6 @@
 (() => {
   const FEEDBACK_URL =
-    'https://github.com/wallentx/github-gist-search-extension/issues/new/choose';
+    'https://github.com/wallentx/github-gist-enhanced-search/issues/new/choose';
   const PAGE_STATE_KEY = '__gsePageState';
   const RESERVED_PATHS = new Set([
     'about',

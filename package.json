@@ -1,5 +1,5 @@
 {
-  "name": "github-gist-search-enhancer",
+  "name": "github-gist-enhanced-search",
   "version": "0.1.0",
   "private": true,
   "description": "Chrome extension that enhances gist.github.com search with a GitHub-style query builder.",
