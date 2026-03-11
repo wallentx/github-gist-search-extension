@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '..');
 const extensionDir = path.join(repoRoot, 'dist', 'extension');
-const zipPath = path.join(repoRoot, 'dist', 'github-gist-search-extension.zip');
+const zipPath = path.join(repoRoot, 'dist', 'github-gist-enhanced-search.zip');
 
 async function main() {
   await fs.rm(zipPath, { force: true });
@@ -24,7 +24,6 @@ async function main() {
           'Install a zip utility or run packaging in an environment where "zip" is available.',
       );
     }
-
     throw zipResult.error;
   }
 
