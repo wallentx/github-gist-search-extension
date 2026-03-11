@@ -235,7 +235,14 @@
         renderOriginalInput(binding);
       });
 
-      input.addEventListener('focus', () => openOverlay(state, binding));
+      input.addEventListener('focus', () => {
+        if (state.suppressFocusOpenFor === input) {
+          state.suppressFocusOpenFor = null;
+          return;
+        }
+
+        openOverlay(state, binding);
+      });
       input.addEventListener('click', (event) => {
         event.preventDefault();
         openOverlay(state, binding);
@@ -288,7 +295,7 @@
                   <ul id="gse-overlay-results" role="listbox" class="ActionListWrap QueryBuilder-ListWrap gse-list" aria-label="Suggestions"></ul>
                   <div class="d-flex flex-items-center border-top color-border-muted px-3 py-2 gse-footer">
                     <span class="color-fg-muted text-small">Gist qualifiers</span>
-                    <a target="_blank" href="${FEEDBACK_URL}" class="Link color-fg-accent text-normal ml-2">Extension Feedback/Bug Report</a>
+                    <a target="_blank" rel="noopener noreferrer" href="${FEEDBACK_URL}" class="Link color-fg-accent text-normal ml-2">Extension Feedback/Bug Report</a>
                     <span class="color-fg-muted text-small ml-auto gse-footerHint">Enter to search</span>
                   </div>
                 </query-builder>
@@ -331,6 +338,7 @@
       hoverStartPoint: null,
       originalBodyOverflow: '',
       originalBodyPaddingRight: '',
+      suppressFocusOpenFor: null,
     };
 
     overlayInput.addEventListener('input', () => {
@@ -423,7 +431,7 @@
       state.overlayInput.setAttribute('aria-expanded', 'true');
       state.originalBodyOverflow = document.body.style.overflow;
       state.originalBodyPaddingRight = document.body.style.paddingRight;
-      compensateForScrollbar(state);
+      compensateForScrollbar();
       document.body.style.overflow = 'hidden';
     }
 
@@ -462,7 +470,19 @@
     document.body.style.overflow = state.originalBodyOverflow;
     document.body.style.paddingRight = state.originalBodyPaddingRight;
     state.activeBinding = null;
-    binding?.originalInput.blur();
+    if (
+      binding?.originalInput &&
+      typeof binding.originalInput.focus === 'function'
+    ) {
+      state.suppressFocusOpenFor = binding.originalInput;
+      requestAnimationFrame(() => {
+        try {
+          binding.originalInput.focus({ preventScroll: true });
+        } catch {
+          binding.originalInput.focus();
+        }
+      });
+    }
   }
 
   function updateClearButton(state) {

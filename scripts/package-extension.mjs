@@ -18,6 +18,13 @@ async function main() {
   });
 
   if (zipResult.error) {
+    if (zipResult.error.code === 'ENOENT') {
+      throw new Error(
+        'Failed to package extension: the "zip" command was not found in PATH.\n' +
+          'Install a zip utility or run packaging in an environment where "zip" is available.',
+      );
+    }
+
     throw zipResult.error;
   }
 

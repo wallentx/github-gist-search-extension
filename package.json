@@ -14,8 +14,7 @@
     "prepare": "node .husky/install.mjs",
     "test": "npm run build && playwright test",
     "test:headed": "npm run build && playwright test --headed",
-    "test:ui": "npm run build && playwright test --ui",
-    "publish:webstore": "npm run package && node scripts/publish-extension.mjs"
+    "test:ui": "npm run build && playwright test --ui"
   },
   "lint-staged": {
     "*.{js,mjs,cjs}": [
