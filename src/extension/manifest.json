@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Gist Search Enhancer",
+  "version": "0.1.0",
+  "description": "Adds qualifier suggestions and autocomplete to the GitHub Gist search bar.",
+  "content_scripts": [
+    {
+      "matches": ["https://gist.github.com/*"],
+      "js": ["content-script.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

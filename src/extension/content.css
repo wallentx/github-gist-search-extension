@@ -1,0 +1,279 @@
+.gse-root[hidden] {
+  display: none !important;
+}
+
+.gse-root {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+.gse-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 4, 9, 0.45);
+}
+
+.gse-shell {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4px 1rem 1rem;
+  pointer-events: none;
+}
+
+.gse-dialog {
+  position: static !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  margin: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+  pointer-events: none;
+  transform: none !important;
+}
+
+.gse-dialog .Overlay-body {
+  padding: 0;
+}
+
+.gse-inlineHost {
+  position: relative;
+}
+
+.gse-inlineStyledContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  color: var(--fgColor-default, #f0f6fc);
+  white-space: pre;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.gse-inlineStyledContent .qb-filter-value {
+  display: block;
+  color: var(--fgColor-accent, #4493f8);
+  background: var(--bgColor-accent-muted, rgba(56, 139, 253, 0.15));
+  border-radius: 3px;
+  padding: 0;
+}
+
+input.gse-inlineHasStyledValue {
+  color: transparent !important;
+}
+
+.gse-container {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  width: min(1080px, calc(100vw - 8rem)) !important;
+  max-width: min(1080px, calc(100vw - 8rem)) !important;
+  margin: 0 !important;
+  pointer-events: auto;
+  transform: none !important;
+  box-sizing: border-box !important;
+}
+
+.gse-container.search-suggestions {
+  width: min(1080px, calc(100vw - 8rem)) !important;
+  max-width: min(1080px, calc(100vw - 8rem)) !important;
+}
+
+.gse-container .QueryBuilder,
+.gse-container .FormControl,
+.gse-container .QueryBuilder-StyledInput,
+.gse-container .QueryBuilder-StyledInputContainer {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.gse-container .FormControl {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.gse-container .QueryBuilder-StyledInput {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  width: calc(100% - 24px) !important;
+  max-width: calc(100% - 24px) !important;
+  margin: 0 12px !important;
+}
+
+.gse-container .QueryBuilder-StyledInputContainer,
+.gse-container .QueryBuilder-InputWrapper {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.gse-container .QueryBuilder-StyledInputContainer {
+  position: relative !important;
+}
+
+.gse-container .QueryBuilder-InputWrapper {
+  position: static !important;
+  display: block !important;
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.gse-sizer {
+  display: block !important;
+  white-space: pre !important;
+  visibility: hidden !important;
+}
+
+.gse-input {
+  width: 300px;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  color: var(--fgColor-default, #f0f6fc) !important;
+  caret-color: var(--fgColor-default, #f0f6fc) !important;
+  background: transparent !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.gse-input.gse-hasStyledValue {
+  color: transparent !important;
+}
+
+.gse-input::placeholder {
+  color: var(--fgColor-muted, #8b949e) !important;
+}
+
+.gse-styledContent {
+  min-height: 1.5rem;
+  color: var(--fgColor-default, #f0f6fc);
+  white-space: pre !important;
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  pointer-events: none;
+}
+
+.gse-styledContent .qb-filter-value {
+  display: block;
+  color: var(--fgColor-accent, #4493f8);
+  background: var(--bgColor-accent-muted, rgba(56, 139, 253, 0.15));
+  border-radius: 3px;
+  padding: 0;
+}
+
+.gse-clearWrap[hidden] {
+  display: none !important;
+}
+
+.gse-list {
+  max-height: min(24rem, calc(100vh - 8rem));
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--control-muted-fgColor-rest, #768390)
+    var(--bgColor-muted, rgba(110, 118, 129, 0.1));
+}
+
+.gse-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.gse-list::-webkit-scrollbar-track {
+  background: var(--bgColor-muted, rgba(110, 118, 129, 0.1));
+}
+
+.gse-list::-webkit-scrollbar-thumb {
+  background: var(--control-muted-fgColor-rest, #768390);
+  border: 2px solid var(--bgColor-muted, rgba(110, 118, 129, 0.1));
+  border-radius: 999px;
+}
+
+.gse-list::-webkit-scrollbar-thumb:hover {
+  background: var(--control-strong-fgColor-rest, #9ea7b3);
+}
+
+.gse-list .ActionListContent {
+  background: transparent !important;
+  border-radius: 6px;
+}
+
+.gse-list .ActionListItem,
+.gse-list .ActionListItem--navActive {
+  position: relative;
+  cursor: pointer;
+  border-radius: 6px;
+  background: transparent !important;
+}
+
+.gse-list .ActionListItem:hover,
+.gse-list .ActionListItem:focus-within,
+.gse-list .ActionListItem[aria-selected='true'],
+.gse-list .ActionListItem--navActive {
+  background: var(--control-transparent-bgColor-hover, #656c7633) !important;
+}
+
+.gse-list .ActionListItem[aria-selected='true']::after,
+.gse-list .ActionListItem--navActive::after {
+  content: '';
+  position: absolute;
+  top: 5.375px;
+  bottom: 5.375px;
+  left: -4px;
+  width: 4px;
+  border-radius: 6px;
+  background: var(--fgColor-accent, #1f6feb);
+}
+
+.gse-empty {
+  padding: 0.875rem 1rem 1rem;
+}
+
+.gse-languageDot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.gse-copy {
+  display: block;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.gse-description {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.gse-footer {
+  gap: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .gse-shell {
+    padding: 4px 0.5rem 0.5rem;
+  }
+
+  .gse-footer {
+    flex-wrap: wrap;
+  }
+
+  .gse-footerHint {
+    margin-left: 0 !important;
+  }
+}

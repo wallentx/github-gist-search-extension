@@ -25,6 +25,7 @@ The extension binds to gist search inputs across `https://gist.github.com/*` whe
 - `dist/extension/`: clean build artifact to load unpacked locally or upload to the Chrome Web Store
 - `tests/`: Playwright regression suite that runs against the built extension bundle
 - `docs/`: implementation notes captured from live GitHub behavior
+- `.github/workflows/`: CI, release, and Chrome Web Store publishing automation
 
 ## Build the extension
 
@@ -83,6 +84,19 @@ In CI, the same suite can run under Xvfb against the built bundle:
 ```bash
 xvfb-run -a npm test
 ```
+
+## Release publishing
+
+The release workflow packages `dist/github-gist-search-extension.zip`, uploads it to the GitHub release, and can publish it to the Chrome Web Store with [`puzzlers-labs/chrome-webstore-publish`](https://github.com/puzzlers-labs/chrome-webstore-publish).
+
+Chrome Web Store publishing requires:
+
+- repository variable `CWS_EXTENSION_ID`
+- repository secret `CWS_CLIENT_ID`
+- repository secret `CWS_CLIENT_SECRET`
+- repository secret `CWS_REFRESH_TOKEN`
+
+The workflow skips the publish step when those values are absent. The first Chrome Web Store publish still has to be done manually.
 
 ## Notes
 
