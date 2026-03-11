@@ -7,7 +7,6 @@ A Chrome extension to search your gists with a GitHub-style centered search over
 
 <img width="1280" height="800" alt="ss1" src="https://github.com/user-attachments/assets/d4599d40-395a-4f69-b9d0-f29ca0620d8f" />
 
-
 ## What it does
 
 On supported `gist.github.com` pages, the extension replaces the in-header search interaction with a centered GitHub-style search overlay and:
